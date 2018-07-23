@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardTable from '../../components/CardTable';
 import axios from 'axios';
+import CardFilter from '../../components/CardFilter';
 
 class CardPage extends Component {
   constructor(...args) {
@@ -28,6 +29,7 @@ class CardPage extends Component {
   render() {
     return (
       <div className="card-page">
+        <CardFilter />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
       </div>
     );
