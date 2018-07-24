@@ -7613,5 +7613,57 @@
     ],
     "System": [],
     "Debug": []
-  }
+  },
+  "races": [
+    "Dragon",
+    "Beast",
+    "Demon",
+    "Elemental",
+    "Mech",
+    "Murloc",
+    "Pirate",
+    "Totem"
+  ],
+  "faction": [
+    "Alliance",
+    "Horde"
+  ],
+  "type": [
+    "Spell",
+    "Weapon",
+    "Minions",
+    "Quest",
+    "Heroes",
+    "Hero Power"
+  ],
+  "rarity": [
+    "Common",
+    "Rare",
+    "Epic",
+    "Legendary"
+  ],
+  "deck-set": [
+    "Basic",
+    "Classic",
+    "Promo",
+    "Hall of Fame",
+    "Naxxramas",
+    "Goblins vs Gnomes",
+    "Blackrock Mountain",
+    "The Grand Tournament",
+    "The League of Explorers",
+    "Whispers of the Old Gods",
+    "One Night in Karazhan",
+    "Mean Streets of Gadgetzan",
+    "Journey to Un'Goro",
+    "Knights of the Frozen Throne",
+    "Kobolds & Catacombs",
+    "The Witchwood",
+    "Tavern Brawl",
+    "Taverns of Time",
+    "Hero Skins",
+    "Missions",
+    "Credits",
+    "Debug"
+  ]
 }

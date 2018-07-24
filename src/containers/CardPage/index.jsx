@@ -3,19 +3,19 @@ import CardTable from '../../components/CardTable';
 import axios from 'axios';
 import CardFilter from '../../components/CardFilter';
 
+const request = axios.create({
+  baseURL: 'http://localhost:5000/',
+  timeout: 1000
+});
+
 class CardPage extends Component {
   constructor(...args) {
     super(...args);
-    this.state = { cards: [], card: {} };
+    this.state = { cards: [], card: {}, filter: { cardSets: [], types: [], factions: [], races: [], rarities: [] } };
   }
 
   componentDidMount() {
-    axios({
-      method: 'get',
-      url: 'http://localhost:5000/cards'
-    })
-      .then(({ data }) => data)
-      .then(cards => this.setState({ cards: cards.Basic }));
+    this.loadInformation();
   }
 
   onCardClick(cardId) {
@@ -26,10 +26,19 @@ class CardPage extends Component {
     this.setState({ cards });
   }
 
+  loadInformation = () => {
+    request({
+      method: 'get',
+      url: '/cards'
+    })
+      .then(({ data }) => data)
+      .then(cards => this.setState({ cards: cards.Basic }));
+  };
+
   render() {
     return (
       <div className="card-page">
-        <CardFilter />
+        <CardFilter {...this.state.filter} />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
       </div>
     );

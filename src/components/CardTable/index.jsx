@@ -3,9 +3,6 @@ import Card from '../Card';
 import CardLabel from '../CardLabel';
 
 class CardTable extends Component {
-  constructor(...args) {
-    super(...args);
-  }
   render() {
     const { cards, onCardClick } = this.props;
     const style = { marginLeft: 50 };

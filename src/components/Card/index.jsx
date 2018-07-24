@@ -2,10 +2,10 @@ import React, { PureComponent } from 'react';
 
 class Card extends PureComponent {
   render() {
-    const { img, cardId, onCardClick } = this.props;
+    const { img, cardId, onCardClick, name } = this.props;
     return (
       <div className="card-image" key={cardId}>
-        <img src={img} onClick={() => onCardClick(cardId)} />
+        <img src={img} alt={name} onClick={() => onCardClick(cardId)} />
       </div>
     );
 
