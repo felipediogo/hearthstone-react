@@ -12,18 +12,25 @@ const Input = styled.input`
   height: 30px;
   font-size: 1.0em;
   margin-left: 15px;
+  margin-top: 15px;
 `;
 const Select = styled.select`
   width: 200px;
   height: 30px;
   font-size: 1.0em;
   margin-left: 15px;
+  margin-top: 15px;
   select:invalid { color: gray; };
+`;
+
+const Button = styled.button`
+  font-size: 1.0em;
+  margin-left: 15px;
 `;
 
 const CardFilter = ({ types, cardSets, rarities, races, factions }) => (
   <Div>
-    <Input type="text" placeholder="Card Set" />
+    <Input type="text" placeholder="Card Cost" />
     <Select value="">
       <option value="" disabled selected hidden>Deck set</option>
       {cardSets.map(cardSet => (
@@ -58,6 +65,7 @@ const CardFilter = ({ types, cardSets, rarities, races, factions }) => (
         <option value={faction}>{faction}</option>
       ))}
     </Select>
+    <Button>Search cards</Button>
   </Div>
 );
 

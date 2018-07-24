@@ -32,6 +32,10 @@ class CardPage extends Component {
       url: '/cards'
     })
       .then(({ data }) => data)
+      .then(data => {
+        console.log(Object.keys(data));
+        return data;
+      })
       .then(cards => this.setState({ cards: cards.Basic }));
   };
 
