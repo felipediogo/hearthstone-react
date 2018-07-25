@@ -28,7 +28,7 @@ const Button = styled.button`
   margin-left: 15px;
 `;
 
-const CardFilter = ({ types, cardSets, rarities, races, factions }) => (
+const CardFilter = ({ types, cardSets, rarities, races, factions, onClick }) => (
   <Div>
     <Input type="text" placeholder="Card Cost" />
     <Select value="">
@@ -65,7 +65,7 @@ const CardFilter = ({ types, cardSets, rarities, races, factions }) => (
         <option value={faction}>{faction}</option>
       ))}
     </Select>
-    <Button>Search cards</Button>
+    <Button onClick={onClick}>Search cards</Button>
   </Div>
 );
 

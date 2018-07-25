@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CardTable from '../../components/CardTable';
 import axios from 'axios';
 import CardFilter from '../../components/CardFilter';
+import ComponentTest from './ComponentTest';
+import PureComponentTest from './PureComponentTest';
 
 const request = axios.create({
   baseURL: 'http://localhost:5000/',
@@ -11,7 +13,7 @@ const request = axios.create({
 class CardPage extends Component {
   constructor(...args) {
     super(...args);
-    this.state = { cards: [], card: {}, filter: { cardSets: [], types: [], factions: [], races: [], rarities: [] } };
+    this.state = { cards: [], card: {}, filter: { cardSets: [], types: [], factions: [], races: [], rarities: [] }, field: 'felipe testing', count: 0 };
   }
 
   componentDidMount() {
@@ -24,6 +26,11 @@ class CardPage extends Component {
       return card;
     });
     this.setState({ cards });
+  }
+
+  onTestClick = () => {
+    console.log('setting state');
+    this.setState({ field: `${this.state.count}`, count: this.state.count + 1 });
   }
 
   loadInformation = () => {
@@ -42,7 +49,9 @@ class CardPage extends Component {
   render() {
     return (
       <div className="card-page">
-        <CardFilter {...this.state.filter} />
+        <ComponentTest field={this.state.field} />
+        <PureComponentTest field={this.state.field} />
+        <CardFilter {...this.state.filter} onClick={this.onTestClick} />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
       </div>
     );
