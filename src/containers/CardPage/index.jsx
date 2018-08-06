@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import CardTable from '../../components/CardTable';
 import axios from 'axios';
 import CardFilter from '../../components/CardFilter';
+import Select from '../../components/Select';
+
 import ComponentTest from './ComponentTest';
 import PureComponentTest from './PureComponentTest';
 
@@ -53,6 +55,8 @@ class CardPage extends Component {
         <PureComponentTest field={this.state.field} />
         <CardFilter {...this.state.filter} onClick={this.onTestClick} />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
+        <Select selectedOption="asd" placeholder="Deck set" options={[]} />
+
       </div>
     );
   }

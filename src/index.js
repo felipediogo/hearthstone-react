@@ -73,7 +73,7 @@ const BasicExample = () => (
 
 ReactDOM.render(
   <Router>
-    <BasicExample />
+    <App />
   </Router>
   , document.getElementById('root'));
 registerServiceWorker();
