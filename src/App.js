@@ -12,6 +12,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <CardPage />
+        {/* <Select selectedOption="" placeholder="Deck set" options={[1,2,3]} /> */}
       </div>
     );
   }

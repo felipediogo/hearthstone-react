@@ -55,8 +55,6 @@ class CardPage extends Component {
         <PureComponentTest field={this.state.field} />
         <CardFilter {...this.state.filter} onClick={this.onTestClick} />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
-        <Select selectedOption="asd" placeholder="Deck set" options={[]} />
-
       </div>
     );
   }
