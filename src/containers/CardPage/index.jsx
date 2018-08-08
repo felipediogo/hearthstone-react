@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import CardTable from '../../components/CardTable';
 import axios from 'axios';
 import CardFilter from '../../components/CardFilter';
-import Select from '../../components/Select';
-
-import ComponentTest from './ComponentTest';
-import PureComponentTest from './PureComponentTest';
 
 const request = axios.create({
   baseURL: 'http://localhost:5000/',
@@ -51,8 +47,6 @@ class CardPage extends Component {
   render() {
     return (
       <div className="card-page">
-        <ComponentTest field={this.state.field} />
-        <PureComponentTest field={this.state.field} />
         <CardFilter {...this.state.filter} onClick={this.onTestClick} />
         <CardTable cards={this.state.cards} onCardClick={this.onCardClick.bind(this)} />
       </div>
